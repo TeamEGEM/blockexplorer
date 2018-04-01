@@ -4,19 +4,19 @@ angular.module('ethExplorer')
     .controller('mainCtrl', function ($rootScope, $scope, $location) {
 
         // Display & update block list
-        getETHRates();
+        //getETHRates();
         updateBlockList();
         updateTXList();
         updateStats();
-        getHashrate();
+        //  getHashrate();
 
         web3.eth.filter("latest", function(error, result){
           if (!error) {
-            getETHRates();
+            //getETHRates();
             updateBlockList();
             updateTXList();
             updateStats();
-            getHashrate();
+            // getHashrate();
             $scope.$apply();
           }
         });
@@ -169,11 +169,11 @@ angular.module('ethExplorer')
 }
 
 
-        function getHashrate()	{
-          $.getJSON("https://etherchain.org/api/miningEstimator", function(json) {
-            var hr = json.data[0].hashRate;
-            $scope.hashrate = hr;
-       	});
+        // function getHashrate()	{
+        //   $.getJSON("https://etherchain.org/api/miningEstimator", function(json) {
+        //     var hr = json.data[0].hashRate;
+        //     $scope.hashrate = hr;
+       	// });
       }
 
         function getETHRates() {
